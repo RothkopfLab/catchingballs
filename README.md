@@ -5,6 +5,7 @@ packages need to be installed for Vizard’s Python environment:
 - pandas
 - PyODE
 - ConfigObj
+
 In addition to this, an up-to-date version of the Oculus Rift Runtime is required. In order for the the eye tracking part of the experiment to work, you also need version 1.5 of the SMI Eye Tracking HMD Upgrade software.
 
 For details about the hardware components and the experimental setup, please consider reading my [Bachelor Thesis](https://github.com/dominikstrb/catchingballs/blob/master/thesis.pdf).

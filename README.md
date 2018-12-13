@@ -1,17 +1,12 @@
 # Catching balls
-A virtual reality environment for a ball catching experiment.
+This repo provides a virtual reality environment for a ball catching experiment. It is based on WorldViz Vizard 5.6, a Virtual Reality development platform. Higher versions of Vizard might not work with this code base. Beside WorldViz Vizard 5.6, the following Python
+packages need to be installed for Vizard’s Python environment:
+• numpy
+• pandas
+• PyODE
+• ConfigObj
+In addition to this, an up-to-date version of the Oculus Rift Runtime is required. In order for the the eye tracking part of the experiment to work, you also need version 1.5 of the SMI Eye Tracking HMD Upgrade software.
 
-Abstract:
-The question how humans run to intercept balls has been addressed in a multitude of studies. There are two conflicting
-views on this topic. Proponents of a model-based view argue that humans employ an internal model of the environment,
-which they use to predict the trajectory of the ball and plan actions in an optimal way according to these predictions. By
-contrast, most of the work on catching balls has relied on different reactive heuristics as an explanation, which establish a
-direct relationship between robust optical variables and behavior. For example, the constant bearing angle (CBA) theory
-states that humans null the rate of change of the target’s horizontal angle w.r.t. an allocentric reference direction. We
-tested in a within-subjects study (n = 14) whether humans can learn to deviate from the CBA strategy when catching
-balls that move at a constant velocity. The contrast of the balls was varied over time in two different ways, such that they
-were hard to see when subjects walked according to the CBA strategy. Our results do not indicate that humans deviate
-from CBA under these conditions. However, the fact that subjects managed to catch the balls when continuous vision of
-the ball trajectory was not available offers some insights about the role of prediction in catching balls. Based on this, we
-suggest that additional research is needed to investigate how actions are guided when visual information is lacking.
+For details about the hardware components and the experimental setup, please consider reading my [Bachelor Thesis](https://github.com/dominikstrb/catchingballs/blob/master/thesis.pdf).
 
+In order to start the experiment, simply run `main.py`. This script will start a GUI (see `gui.py`), which enables you to load a config file that determines the hardware settings as well the experimental conditions. Example config files (used in my thesis) can be found [here](https://github.com/dominikstrb/catchingballs/blob/master/config). Pressing the "Start" button in the GUI creates an experiment info file in the subdirectory `data/{subject_nr}/`. When the experiment is launched, this file is used to intialize the hardware, the visual environment and the experiment. All the magic then happens in `èxperiment.py`.
